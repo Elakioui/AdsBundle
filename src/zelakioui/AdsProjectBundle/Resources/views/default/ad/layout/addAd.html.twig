@@ -1,4 +1,7 @@
 {% extends '::layout/layout.html.twig' %}
 {% block body %}
-     {{ form(form) }}
+     <form method="POST" action="{{ path('default_addAd') }}">
+         {{ form(form) }}
+     </form>
+
 {% endblock body %}

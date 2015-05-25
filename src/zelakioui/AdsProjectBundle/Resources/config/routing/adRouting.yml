@@ -2,3 +2,6 @@ default_addAd:
     path:     /add
     defaults: { _controller: zelakiouiAdsProjectBundle:Ad:addAd}
 
+default_successAddAd:
+    path:     /success
+    defaults: { _controller: zelakiouiAdsProjectBundle:Ad:successAddAd}

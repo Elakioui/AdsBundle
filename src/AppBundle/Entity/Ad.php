@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Ad
- * @ORM\Table("Ad")
+ * @ORM\Table("ad")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\AdRepository")
  */
 class Ad
@@ -30,7 +30,7 @@ class Ad
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date_modif", type="datetime")
+     * @ORM\Column(name="date_modif", type="datetime",nullable=true)
      */
     private $dateModif;
 
@@ -64,6 +64,7 @@ class Ad
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\UserAd",inversedBy="ads", cascade={"persist"})
+     * @ORM\JoinColumn(name="user_ad_id",nullable=true)
      */
     private $userAd;
 
@@ -81,6 +82,15 @@ class Ad
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\City",inversedBy="ads")
      */
     private $city ;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=100,nullable=true)
+     */
+    private $password;
+
+    private $rewritePassword;
 
     /**
      * Get id
@@ -339,4 +349,40 @@ class Ad
     {
         return $this->city;
     }
+
+    /**
+     * @return string
+     */
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    /**
+     * @param string $password
+     */
+    public function setPassword($password)
+    {
+        $this->password = $password;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRewritePassword()
+    {
+        return $this->rewritePassword;
+    }
+
+    /**
+     * @param mixed $rewritePassword
+     */
+    public function setRewritePassword($rewritePassword)
+    {
+        $this->rewritePassword = $rewritePassword;
+    }
+
+
+
+
 }

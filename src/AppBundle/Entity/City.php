@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * City
  *
- * @ORM\Table()
+ * @ORM\Table("city")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CityRepository")
  */
 class City
@@ -31,7 +31,7 @@ class City
     /**
      * @var string
      *
-     * @ORM\Column(name="zipCode", type="string", length=120)
+     * @ORM\Column(name="zip_code", type="string", length=120)
      */
     private $zipCode;
 

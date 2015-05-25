@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * UserAd
  *
- * @ORM\Table()
+ * @ORM\Table("user_ad")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserAdRepository")
  */
 class UserAd extends BaseUser
@@ -197,10 +197,5 @@ class UserAd extends BaseUser
     {
         $this->phoneDisplayed = $phoneDisplayed;
     }
-
-
-
-
-
 
 }

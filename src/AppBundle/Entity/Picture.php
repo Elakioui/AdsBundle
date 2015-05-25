@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Picture
  *
- * @ORM\Table()
+ * @ORM\Table("picture")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PictureRepository")
  */
 class Picture
@@ -38,7 +38,7 @@ class Picture
 
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Ad",inversedBy="pictures")
-     * @ORM\JoinColumn(nullable=true)
+     * @ORM\JoinColumn(name="ad",nullable=true)
      */
     private $ad;
 
