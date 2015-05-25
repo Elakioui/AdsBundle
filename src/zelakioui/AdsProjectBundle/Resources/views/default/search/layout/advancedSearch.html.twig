@@ -1,0 +1,13 @@
+{% extends '::layout/layout.html.twig' %}
+{% block body %}
+    <ul>
+         {% for ad in ads %}
+
+                 <li>{{  ad.title }} </li>
+                 {% if ad.pictures[0] is defined  %}
+                   <li><img src="{{  ad.pictures[0].path }}" alt="{{ ad.pictures[0].alt }}"/></li>
+                 {% endif %}
+
+         {% endfor %}
+    </ul>
+{% endblock body %}

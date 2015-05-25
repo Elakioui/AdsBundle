@@ -1,0 +1,15 @@
+default_index:
+    path:     /
+    defaults: { _controller: zelakiouiAdsProjectBundle:Index:index }
+
+default_search:
+    resource: "@zelakiouiAdsProjectBundle/Resources/config/routing/searchRouting.yml"
+    prefix:   /search
+
+default_page:
+    resource: "@zelakiouiAdsProjectBundle/Resources/config/routing/pageRouting.yml"
+    prefix:   /page
+
+default_ad:
+    resource: "@zelakiouiAdsProjectBundle/Resources/config/routing/adRouting.yml"
+    prefix:   /ad

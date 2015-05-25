@@ -1,0 +1,8 @@
+services:
+    advancedSearch:
+        class: zelakioui\AdsProjectBundle\Services\AdvancedSearch
+        arguments: [@service_container]
+    registration.form.type:
+            class: zelakioui\AdsProjectBundle\Form\RegistrationFormType
+            tags:
+                - { name: form.type, alias: Ads_project_user_registration }

@@ -1,0 +1,10 @@
+default_menu_pages:
+    path:     /menu
+    defaults: { _controller: zelakiouiAdsProjectBundle:Page:menu }
+
+default_get_page:
+    path:     /{id}
+    defaults: { _controller: zelakiouiAdsProjectBundle:Page:getPage }
+
+
+

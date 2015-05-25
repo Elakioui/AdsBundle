@@ -1,0 +1,16 @@
+<form id="rechercheForm" method="post" action="{{ path('default_advancedSearch') }}">
+    <input type="text" class="rechercher" placeholder="que cherchez-vous ?" name="which_object"/>
+    <select name="which_category" class="rechercher">
+        <option value="category" selected>Choisir une catégorie</option>
+        {% for category in categories %}
+            <option value="{{ category.name }}">{{ category.name }}</option>
+        {% endfor %}
+    </select>
+    <select name="which_city" class="rechercher">
+        <option value="city" selected>Choisir une ville </option>
+        {% for city in cities %}
+              <option value="{{ city.name }}">{{ city.name }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Rechercher" />
+</form>

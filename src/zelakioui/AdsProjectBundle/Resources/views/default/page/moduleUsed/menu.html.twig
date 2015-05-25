@@ -1,0 +1,10 @@
+<div class="row">
+    <footer>
+        <ul>
+            {% for page in pages %}
+                <li><a href="{{ path('default_get_page',{'id':page.id}) }}">{{ page.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </footer>
+</div>
+

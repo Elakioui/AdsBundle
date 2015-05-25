@@ -1,0 +1,7 @@
+default_advancedSearch:
+    path:     /
+    defaults: { _controller: zelakiouiAdsProjectBundle:Search:advancedSearch }
+
+default_formContent:
+    path:     /form/content
+    defaults: { _controller: zelakiouiAdsProjectBundle:Search:formContent }

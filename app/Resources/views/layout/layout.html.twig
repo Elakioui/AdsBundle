@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/normalize.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.css') }}">
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <header>
+                    <a href="#"><img src="{{ asset('img/logo.png') }}" alt="logo" width="100" height="100"/></a>
+                    <ul>
+                        <li><a href="#">Rechercher des annonces</a></li>
+                        <li><a href="#">Aide</a></li>
+                        <li><a href="{{ path("fos_user_registration_register") }}">Créer une compte</a></li>
+                        <li><a href="{{ path('fos_user_security_login') }}">Se connecter </a></li>
+                        <li><a href="{{ path('default_addAd') }}">Déposer une annonce</a></li>
+                    </ul>
+                </header>
+            </div>
+            {% render(controller('zelakiouiAdsProjectBundle:Search:formContent')) %}
+
+             {% block body %}{% endblock %}
+             {% render(controller('zelakiouiAdsProjectBundle:Page:menu')) %}
+        </div>
+
+        {% block javascripts %}
+            <script src="{{ asset('js/bootstrap.js') }}"></script>
+            <script src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+            <script src="{{ asset('js/main.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>
