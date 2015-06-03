@@ -5,3 +5,7 @@ default_addAd:
 default_successAddAd:
     path:     /success
     defaults: { _controller: zelakiouiAdsProjectBundle:Ad:successAddAd}
+
+client_addAdd:
+    path:     /client/add
+    defaults: { _controller: zelakiouiAdsProjectBundle:AdClient:addAd}

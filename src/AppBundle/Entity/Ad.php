@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Ad
@@ -13,6 +14,8 @@ class Ad
 {
     /**
      * @var integer
+     *
+     *
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -43,7 +46,7 @@ class Ad
 
     /**
      * @var float
-     *
+     * @assert\NotBlank(message="Ne laisser pas le champs vide",groups={"ajouterAnnonce"})
      * @ORM\Column(name="prix", type="float")
      */
     private $prix;
@@ -365,24 +368,6 @@ class Ad
     {
         $this->password = $password;
     }
-
-    /**
-     * @return mixed
-     */
-    public function getRewritePassword()
-    {
-        return $this->rewritePassword;
-    }
-
-    /**
-     * @param mixed $rewritePassword
-     */
-    public function setRewritePassword($rewritePassword)
-    {
-        $this->rewritePassword = $rewritePassword;
-    }
-
-
 
 
 }

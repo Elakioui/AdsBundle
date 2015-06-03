@@ -14,10 +14,19 @@
                 <header>
                     <a href="#"><img src="{{ asset('img/logo.png') }}" alt="logo" width="100" height="100"/></a>
                     <ul>
+
                         <li><a href="#">Rechercher des annonces</a></li>
                         <li><a href="#">Aide</a></li>
                         <li><a href="{{ path("fos_user_registration_register") }}">Créer une compte</a></li>
-                        <li><a href="{{ path('fos_user_security_login') }}">Se connecter </a></li>
+
+                        {# to know if the user connected or not #}
+                             {% if not is_granted('ROLE_CUSTOMER') %}
+                                 <li><a href="{{ path("fos_user_security_login") }}">Se connecter </a></li>
+                             {% else %}
+                                 <li><a href="{{ path("fos_user_security_logout") }}">Se déconnecter </a></li>
+                             {% endif %}
+                        {# end of condition #}
+
                         <li><a href="{{ path('default_addAd') }}">Déposer une annonce</a></li>
                     </ul>
                 </header>

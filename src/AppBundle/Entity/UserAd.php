@@ -63,7 +63,6 @@ class UserAd extends BaseUser
 
     private $city;
 
-
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Ad",mappedBy="userAd")
      */
@@ -175,7 +174,7 @@ class UserAd extends BaseUser
     /**
      * Get city
      *
-     * @return \AppBundle\Entity\City 
+     * @return \AppBundle\Entity\City
      */
     public function getCity()
     {

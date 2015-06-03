@@ -31,7 +31,6 @@ class AdType extends AbstractType
             ->add('title')
             ->add('body')
             ->add('password','password',array('label'=> 'Saisir le mot de passe'))
-            ->add('rewritePassword','password',array('label'=>'retaper le mot de passe :'))
             ->add('ajouter','submit')
         ;
 
@@ -43,7 +42,8 @@ class AdType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Ad'
+            'data_class' => 'AppBundle\Entity\Ad',
+            'validation_groups' => true,
         ));
     }
 

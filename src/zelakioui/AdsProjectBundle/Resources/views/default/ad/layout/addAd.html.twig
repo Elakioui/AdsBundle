@@ -1,7 +1,52 @@
 {% extends '::layout/layout.html.twig' %}
 {% block body %}
      <form method="POST" action="{{ path('default_addAd') }}">
-         {{ form(form) }}
+          {#form type input  #}
+              {{ form_errors(form.type) }}
+              {{ form_label(form.type) }}
+              {{ form_widget(form.type) }}
+          {#end form type#}
+         {#form type Category  #}
+                 {{ form_errors(form.category) }}
+                 {{ form_label(form.category) }}
+                 {{ form_widget(form.category) }}
+         {#end form Category#}
+         <br/>
+         {#form type Category  #}
+                 {{ form_errors(form.city) }}
+                 {{ form_label(form.city) }}
+                 {{ form_widget(form.city) }}
+         {#end form Category#}
+         <br/>
+         {#form type Category  #}
+                 {{ form_errors(form.prix) }}
+                 {{ form_label(form.prix) }}
+                 {{ form_widget(form.prix) }}
+         {#end form Category#}
+            <br/>
+         {#form type Category  #}
+             {{ form_errors(form.title) }}
+             {{ form_label(form.title) }}
+             {{ form_widget(form.title) }}
+         {#end form Category#}
+         <br/>
+         {#form type Category  #}
+             {{ form_errors(form.body) }}
+             {{ form_label(form.body) }}
+             {{ form_widget(form.body) }}
+         {#end form Category#}
+            <br/>
+         {% if not app.user and  not is_granted('ROLE_CUSTOMER') %}
+             {#form type Category  #}
+                 {{ form_errors(form.password) }}
+                 {{ form_label(form.password) }}
+                 {{ form_widget(form.password) }}
+             {#end form Category#}
+         {% endif %}
+         {{ form_widget(form.ajouter) }}
+
+
+
      </form>
 
 {% endblock body %}
